@@ -1,0 +1,40 @@
+﻿@model CodeFirstEntities.Student
+
+@{
+    ViewBag.Title = "Details of Selected Student";
+}
+
+<h2>Details of Selected Student</h2>
+
+<fieldset>
+    <legend>Details of Selected Student</legend>
+
+    <div class="display-label" style="font-weight: bold;">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div><br/>
+
+    <div class="display-label" style="font-weight: bold;">Email</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div><br/>
+
+    <div class="display-label" style="font-weight: bold;">Address</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div><br/>
+
+    <div class="display-label" style="font-weight: bold;">Age</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Age)
+    </div><br/>
+
+    <div class="display-label" style="font-weight: bold;">Country</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Country)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
+    @Html.ActionLink("Back to List", "List")
+</p>

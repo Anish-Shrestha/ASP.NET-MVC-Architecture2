@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CodeFirstEntities.Student>
+@{
+    ViewBag.Title = "List of all Students";
+}
+<h2>
+    List of all Students</h2>
+<table style="padding: 10px; font-size: 16px;" cellpadding="10px" cellspacing="15px">
+    <tr >
+        <th>
+            Name
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Age
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+        </th>
+    </tr>
+    @{
+        if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+        <tr >
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+            </td>
+        </tr>
+            }
+        }
+    }
+</table>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
